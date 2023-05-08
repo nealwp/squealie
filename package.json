@@ -1,10 +1,7 @@
 {
-    "name": "typescript-cli",
+    "name": "@nealwp/squealie",
     "version": "1.0.0",
     "description": "",
-    "bin": {
-        "cli": "./index.js"
-    },
     "scripts": {
         "dev": "nodemon ./src/index.ts",
         "test": "jest",
@@ -12,7 +9,7 @@
         "lint": "eslint"
     },
     "keywords": [],
-    "author": "",
+    "author": "nealwp",
     "license": "ISC",
     "devDependencies": {
         "@types/jest": "^29.5.0",

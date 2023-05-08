@@ -1,5 +1,12 @@
 const quoted = (str: string) => `'${str}'`
 
+/** 
+* replaces template values in SQL string with object properties
+* SQL:         `INSERT INTO users (name) VALUES (:name)`
+* JS object:   {name: "Bubba"}
+*
+* SQL output:  `INSERT INTO users (name) VALUES ("Bubba")
+*/
 export const bindObjectToSql = (obj: Object, sql: string) => {
     const entries = Object.entries(obj)
 
