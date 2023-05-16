@@ -35,3 +35,18 @@ export const bindObjectToSql = (obj: Object, sql: string) => {
 
     return output
 }
+
+/** 
+* replaces template values in SQL string with n entries from array
+* SQL:              `INSERT INTO users (name) VALUES (:name)`
+* Object array:     [{name: "Bubba"}, {name: "Gump"}]
+*
+* SQL output:  `INSERT INTO users (name) VALUES ("Bubba"),("Gump")
+*/
+export const bindArrayToSql = (objects: Object[], sql: string) => {
+    let output = sql;
+    for (const obj of objects) {
+        output += bindObjectToSql(obj, sql)   
+    } 
+    return output
+}
